@@ -138,6 +138,7 @@
           for (d in data) {
             var name = d;
             var parking = data[d];
+            if (!parking) {continue;}
             var status = parking.status.toLowerCase();
             var freePlaces = parking.free;
             var maxPlaces = parking.max;
