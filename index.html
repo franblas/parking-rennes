@@ -32,9 +32,29 @@
     .almost-full { background-color: #d35400; }
     .full { background-color: #c0392b; }
     .available { background-color: #27ae60; }
+
+    #theloader {
+      border: 16px solid #f2f2f2;
+      border-radius: 50%;
+      border-top: 16px solid #3498db;
+      width: 120px;
+      height: 120px;
+      -webkit-animation: spin 2s linear infinite;
+      animation: spin 2s linear infinite;
+      margin-top: 100px;
+    }
+    @-webkit-keyframes spin {
+      0% { -webkit-transform: rotate(0deg); }
+      100% { -webkit-transform: rotate(360deg); }
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
   </style>
 
   <body>
+    <center><div id="theloader"></div></center>
     <div class="container" id="thecontainer"></div>
     <script type="text/javascript">
       var openDates = {
@@ -135,6 +155,8 @@
       xhr.onload = function() {
         if (xhr.status === 200) {
           var data = JSON.parse(xhr.response)
+          var theloader = document.getElementById("theloader");
+          theloader.style.display = "none";
           for (d in data) {
             var name = d;
             var parking = data[d];
