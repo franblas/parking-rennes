@@ -150,7 +150,7 @@
       }
 
       var xhr = new XMLHttpRequest();
-      xhr.open("GET", "https://cors-anywhere.herokuapp.com/http://data.citedia.com/r1/parks/status");
+      xhr.open("GET", "https://corsproxy.io/http://data.citedia.com/r1/parks/status");
       xhr.setRequestHeader("X-Requested-With", "github.io");
       xhr.onload = function() {
         if (xhr.status === 200) {
